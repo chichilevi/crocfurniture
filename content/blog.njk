@@ -1,0 +1,83 @@
+---
+layout: layouts/pages.njk
+---
+
+    <!-- inner page banner -->
+    <div class="dez-bnr-inr overlay-black-middle" style="background-image:url(/images/banner/bnr1.jpg);">
+        <div class="container">
+            <div class="dez-bnr-inr-entry">
+                <h1 class="text-white">Blog</h1>
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="#">Home</a></li>
+                <li>Blog</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+    <div class="section-full content-inner">
+        <div class="container">
+            <div class="clearfix">
+                <!-- blog grid -->
+                <div id="masonry" class="row dez-blog-grid-3">
+
+                    {% for blogdata in blogdatas %}
+                    <div class="post card-container col-lg-4 col-sm-6 col-12">
+                        <div class="blog-post blog-grid">
+                            <div class="dez-post-media dez-img-effect zoom-slow">
+                                <a href="#">
+                                    <img src="{{ blogdata.image }}" alt="">
+                                </a>
+                            </div>
+                            <div class="dez-post-info">
+                                <div class="dez-post-title ">
+                                    <h4 class="post-title"><a href="#">{{ blogdata.title }}</a></h4>
+                                </div>
+                                <div class="dez-post-meta ">
+                                    <ul>
+                                        <li class="post-date"> <i class="fa fa-calendar"></i>{{ blogdata.date }}</li>
+                                        <li class="post-author"><i class="fa fa-user"></i>By <a href="#">demongo</a> </li>
+                                        <li class="post-comment"><i class="fa fa-comments"></i> <a href="#">0 Comments</a> </li>
+                                    </ul>
+                                </div>
+                                <div class="dez-post-text">
+                                    <p>
+                                        {{ blogdata.description }}
+                                    </p>
+                                </div>
+                                <div class="dez-post-readmore"> 
+                                    <a href="#" title="READ MORE" rel="bookmark" class="site-button-link">Read More...</a> 
+                                </div>
+                                <div class="dez-post-tags">
+                                    <div class="post-tags"> 
+                                        <a href="#">Child </a> <a href="#">Eduction </a> 
+                                        <a href="#">Money </a> <a href="#">Resturent </a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                
+                </div>
+                <!-- blog grid END -->
+                <!-- Pagination -->
+                <div class="pagination-bx">
+                    <ul class="pagination">
+                        <li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                    </ul>
+                </div>
+                <!-- Pagination END -->
+            </div>
+        </div>
+    </div>

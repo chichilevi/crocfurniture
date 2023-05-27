@@ -1,0 +1,81 @@
+---
+layout: layouts/home.njk
+---
+
+<!-- inner page banner -->
+<div class="dez-bnr-inr overlay-black-middle" style="background-image:url(/images/banner/bnr3.jpg);">
+	<div class="container">
+		<div class="dez-bnr-inr-entry">
+			<h1 class="text-white">Gallery</h1>
+		</div>
+	</div>
+</div>
+<!-- inner page banner END -->
+<!-- Breadcrumb row -->
+<div class="breadcrumb-row">
+	<div class="container">
+		<ul class="list-inline">
+			<li><a href="/">Home</a></li>
+			<li>Gallery</li>
+		</ul>
+	</div>
+</div>
+<!-- Breadcrumb row END -->
+<div class="section-full content-inner">
+	<!-- Left & right section start -->
+	<div class="container">
+		<!-- Gallery -->
+		<div class="site-filters clearfix center  m-b40">
+			<ul class="filters" data-toggle="buttons">
+				<li data-filter="" class="btn active">
+					<input type="radio">
+					<a href="#" class="site-button-secondry"><span>Show All</span></a> </li>
+				<li data-filter="home" class="btn">
+					<input type="radio" >
+					<a href="#" class="site-button-secondry"><span>Outdoor chairs</span></a> </li>
+				<li data-filter="office" class="btn">
+					<input type="radio">
+					<a href="#" class="site-button-secondry"><span>Dog House</span></a> </li>
+				<li data-filter="commercial" class="btn">
+					<input type="radio">
+					<a href="#" class="site-button-secondry "><span>Swing chairs</span></a> </li>
+				<li data-filter="window" class="btn">
+					<input type="radio">
+					<a href="#" class="site-button-secondry"><span>Tables</span></a> </li>
+				<li data-filter="window" class="btn">
+					<input type="radio">
+					<a href="#" class="site-button-secondry"><span>Chairs</span></a> </li>
+			</ul>
+		</div>
+		<div class="clearfix">
+			<ul id="masonry" class="row dez-gallery-listing gallery-grid-4 mfp-gallery m-b0">
+
+			{% for gallerydata in gallerydatas %}
+				<li data-filter="" class="home card-container col-lg-4 col-md-6 col-6">
+					<div class="dez-box dez-gallery-box">
+						<div class="dez-thum dez-img-overlay1 dez-img-effect zoom-slow"> <a href="javascript:void(0);"> <img src="{{ gallerydata.image }}"  alt=""> </a>
+							<div class="overlay-bx">
+								<div class="overlay-icon"> <a href="javascript:void(0);"> <i class="fa fa-link icon-bx-xs"></i> </a> <a  href="{{ gallerydata.image }}" class="mfp-link"  title="{{ gallerydata.title }}"> <i class="fa fa-picture-o icon-bx-xs"></i> </a> </div>
+							</div>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+
+			</ul>
+		</div>
+		<!-- Gallery END -->
+		<!-- Pagination start -->
+		<div class="pagination-bx m-b30">
+			<ul class="pagination">
+				<li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+				<li class="active"><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+			</ul>
+		</div>
+		<!-- Pagination END -->
+	</div>
+	<!-- Left & right section  END -->
+</div>
